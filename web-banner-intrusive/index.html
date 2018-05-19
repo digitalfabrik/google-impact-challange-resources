@@ -1,56 +1,92 @@
-<style>
-  .banner {
-    color: black;
-    background-color: #fafafa;
-    opacity: 0.6;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    overflow: hidden;
-    box-sizing: border-box;
-    font-family: Helvetica, Calibri, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.2em;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center;
-    padding: 1em 1.8em;
-    width: 100%;
-    justify-content: space-between;
-  }
+<html>
 
-  .message-wrapper {
-    display: flex;
-  }
+<head>
+  <meta charset="utf-8" />
 
-  .btn-wrapper {
-    display: flex;
-  }
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:600');
 
-  .btn {
-    display: block;
-    margin: 0 .8em;
-    padding: .4em .8em;
-    font-size: .9em;
-    font-weight: 700;
-    border-width: 2px;
-    border-style: solid;
-    text-align: center;
-    white-space: nowrap;
-    color: black;
-    border-color: black;
-    background-color: transparent;
-    text-decoration: none;
-  }
-</style>
+    .gic2018-banner {
+      color: black;
+      background-color: #fafafa;
+      opacity: 0.6;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      overflow: hidden;
+      box-sizing: border-box;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      align-items: center;
+      padding: 1em 1.8em;
+      width: 100%;
+      line-height: 1.2em;
+      justify-content: space-between;
+    }
 
-<div role="dialog" class="banner">
-  <span class="message-wrapper">Ich habe abgestimmt. Und du? Deine Stimme kann Großes bewirken bei der Google.org Impact Challenge!</span>
-  <div class="btn-wrapper">
-    <a role="button" tabindex="0" class="btn" href="https://impactchallenge.withgoogle.com/deutschland2018/charities/digital-factory?v=NS0wLTItMTUyNjU3MTExNjY5NS40MDk3ODU4MjIwNjUyMzY4NjEtdm90aW5n"
-      target="_blank">Jetzt Abstimmen!</a>
-  </div>
-</div>
+    .gic2018-btn-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .gic2018-btn {
+      display: block;
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+      cursor: pointer;
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    .gic2018-btn-border {
+      margin: 0 0.4em;
+      color: #c4a900;
+      border-color: #c4a900;
+      border-width: 2px;
+      border-style: solid;
+    }
+  </style>
+
+  <script>
+    var close = function () {
+      // console.log("test")
+      document.getElementsByClassName("gic2018-banner")[0].remove();
+      localStorage.setItem("gic2018-banner", false)
+    };
+
+    if (localStorage.getItem("gic2018-banner") === null) {
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var elem = document.createElement('div');
+        elem.innerHTML = '\
+        <div role="dialog" class="gic2018-banner"> \
+          <span class="gic2018-message-wrapper">Wir sind im Finale der Google.org Impact Challenge! 🚀 Es winken bis zu 500.000 € für unser Projekt und jede Stimme \
+            zählt. Die Unterstützung ist nur einen Klick entfernt! 🎉🍻💥🎈🤸</span> \
+          <div class="gic2018-btn-wrapper"> \
+            <span id="close" tabindex="1" class="gic2018-btn">Nein Danke</span> \
+            <a id="open" role="button" tabindex="0" class="gic2018-btn gic2018-btn-border" href="https://impactchallenge.withgoogle.com/deutschland2018/charities/digital-factory?v=NS0wLTItMTUyNjU3MTExNjY5NS40MDk3ODU4MjIwNjUyMzY4NjEtdm90aW5n" \
+              target="_blank">Jetzt Abstimmen!</a> \
+          </div> \
+        </div> \
+        '
+        document.body.appendChild(elem);
+        document.querySelector('#close').onclick = close;
+        document.querySelector('#open').onclick = close;
+      });
+    }
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html>
