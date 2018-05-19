@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:600');
+
+.gic2018-banner {
+  color: black;
+  background-color: #fafafa;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  padding: .5em .5em;
+  width: 100%;
+  line-height: 1.2em;
+  justify-content: space-between;
+}
+
+.gic2018-btn-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gic2018-btn {
+  display: block;
+  padding: 10px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.gic2018-btn-border {
+  margin: 0 0.4em;
+  color: #fbda16;
+  border-color: #fbda16;
+  border-width: 2px;
+  border-style: solid;
+}
+
+@media only screen and (min-width: 600px) {
+  .gic2018-btn {
+    padding: 15px 20px;
+  }
+
+  .gic2018-btn-wrapper {
+    flex-direction: row;
+  }
+  .gic2018-banner {
+    padding: 1em 1.8em;
+  }
+}
