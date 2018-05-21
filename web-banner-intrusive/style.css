@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:600');
+@import url('https://fonts.googleapis.com/css?family=Raleway:600,300');
 
 .gic2018-banner {
   color: black;
@@ -47,6 +47,11 @@
   border-color: #fbda16;
   border-width: 2px;
   border-style: solid;
+}
+
+.gic2018-close {
+  font-size: 14px;
+  font-weight: 300;
 }
 
 @media only screen and (min-width: 600px) {
